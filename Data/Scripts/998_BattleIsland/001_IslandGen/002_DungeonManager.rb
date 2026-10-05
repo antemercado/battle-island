@@ -1,0 +1,61 @@
+class DungeonManager
+
+  attr_accessor :currentDungeon
+
+  def newDungeon(seed=-1)
+    currentDungeon = IslandDungeon.new()
+    currentDungeon.generate(seed)
+    @currentDungeon = currentDungeon
+  end
+
+  def transferMaps(frontierID)
+    currentMap = @currentDungeon.currentMap
+    frontier = currentMap.getFrontierByID(frontierID)
+
+    # No frontier matching ID
+    if frontier.nil?
+      return false
+    end
+
+    connectedFrontier = frontier.connectedFrontier
+
+    # No connected frontier to transfer to.
+    if connectedFrontier.nil?
+      return false
+    end
+
+    destinationMap = connectedFrontier.parentMap
+    @currentDungeon.currentMap = destinationMap
+    
+    # Engine Transfer Logic
+    $game_temp.player_new_x = connectedFrontier.engineMapCoords[0]
+    $game_temp.player_new_y = connectedFrontier.engineMapCoords[1]
+    $game_temp.player_new_direction = connectedFrontier.engineMapFacingDir
+    $game_temp.player_new_map_id = destinationMap.engineID
+    $scene.transfer_player
+    $game_map.autoplay
+    $game_map.refresh
+  end
+
+def enterMap(map, engineX = nil, engineY = nil)
+  if @currentDungeon.nil? || map.nil?
+    return false
+  end
+
+  @currentDungeon.currentMap = map
+
+  map.enterMap(engineX, engineY)
+  return true
+end
+
+end
+#----------------------------
+# Save map value to save file
+#----------------------------
+
+SaveData.register(:dungeonmanager) do
+    ensure_class :DungeonManager
+    save_value { $DungeonManager }
+    load_value { |value| $DungeonManager = value }
+    new_game_value { DungeonManager.new }
+end
