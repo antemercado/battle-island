@@ -52,46 +52,65 @@ class IslandDungeon
     @mapPool = getMapPool()
 
     # Place map at center of grid
-    puts "Placing center map..."
+    initialPlacement()   
+
+    # Place rooms until MAX_ROOMS is placed
+    generateRooms()
+
+    # Place dead ends
+    placeDeadEnds()
+
+    # Trim bounding box
+    trimBoundingBox()
+  end
+
+  def initialPlacement()
     centerMap = ExampleCross.new()
     @mapGrid[@centerX][@centerY] = centerMap
     centerMap.frontiers.each do |f|
       f.originLocation = [@centerX, @centerY]
       @availableFrontiers << f
     end
-    puts "Center map placed at #{@centerX},#{@centerY}"
+    puts "[initialPlacement] Center map placed at #{@centerX},#{@centerY}"
 
     # Make currentMap the center map for testing purposes
     @currentMap = centerMap
 
     # Place a room at each radial direction from center
-    puts "Placing radial center maps..."
     openingFrontiers = @availableFrontiers.shuffle(random: @DungeonRNG)
 
     openingFrontiers.each do |f|
       openingMap = ExampleCross.new()
       tryPlaceMap(openingMap, f)
     end
+  end
 
-    # Place rooms until MAX_ROOMS is placed
-    puts "Placing map number #{roomCount + 1}..."
+  def generateRooms(number = MAX_ROOMS)
+    placed = 0
     branchingFailures = 0
-    while @roomCount < MAX_ROOMS && (MAX_FAILURES < 0 || branchingFailures < MAX_FAILURES)
+    while placed < number && @roomCount < MAX_ROOMS && (MAX_FAILURES < 0 || branchingFailures < MAX_FAILURES)
+      puts "[generatorRooms] Placing map number #{roomCount + 1}..."
       branchingFrontier = getFrontierBranch()
       branchMap = getMapToPlace()
 
       success = tryPlaceMap(branchMap, branchingFrontier)
       if success
         branchingFailures = 0
-        puts "Map #{roomCount} placed!"
+        puts "[generatorRooms] Map #{roomCount} placed!"
       else
         branchingFailures += 1
-        puts "MAP FAILED TO PLACE. FAILURE COUNT: #{branchingFailures}/#{MAX_FAILURES}"
+        puts "[generatorRooms] MAP FAILED TO PLACE. FAILURE COUNT: #{branchingFailures}/#{MAX_FAILURES}"
       end
     end
 
-    # Place dead ends
-    puts "Placing dead end maps.."
+    if branchingFailures >= MAX_FAILURES
+      return nil
+    end
+    return placed
+  end
+
+  def placeDeadEnds()
+    # puts "[placeDeadEnds] Placing dead end maps.."
     frontiersToClose = @availableFrontiers.clone
 
     frontiersToClose.each do |f|
@@ -99,16 +118,15 @@ class IslandDungeon
 
       success = tryPlaceMap(deadEnd, f)
       if !success
-        puts "FAILED TO PLACE DEAD-END MAP!"
+        puts "[placeDeadEnds] FAILED TO PLACE DEAD-END MAP!"
       end
     end
-
-    # Trim bounding box
-    # puts "Trimming bounding box..."
-    # trimBoundingBox()
   end
 
   def trimBoundingBox(buffer = 0)
+    return true
+    
+    puts "Trimming bounding box..."
 
     minX = nil
     maxX = nil
