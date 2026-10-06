@@ -35,6 +35,8 @@ class DungeonManager
     $scene.transfer_player
     $game_map.autoplay
     $game_map.refresh
+
+    puts "[transferMaps] Moved to [#{connectedFrontier.originLocation[0]},#{connectedFrontier.originLocation[1]}]"
   end
 
 def enterMap(map, engineX = nil, engineY = nil)

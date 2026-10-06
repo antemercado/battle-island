@@ -31,6 +31,8 @@ class IslandDungeon
     @roomCount = 0
   end
 
+  # TODO: Should probably seperate this all into a IslandGenerator class
+  #         that can then hold different generators to call.
   def generate(seed = -1)
 
     if seed == -1
@@ -56,6 +58,10 @@ class IslandDungeon
 
     # Place rooms until MAX_ROOMS is placed
     generateRooms()
+
+    # Cave Generation
+    @caveGen = CaveGenerator.new(self)
+    @caveGen.generate()
 
     # Place dead ends
     placeDeadEnds()
@@ -385,7 +391,7 @@ class IslandDungeon
       next if targetMap.nil?
 
       # Occupied space is also fine IF it exposes a matching frontier.
-      matchingFrontier = getKissingFrontier(frontier, frontierX, frontierY)
+      matchingFrontier = frontier.getKissingFrontier(frontierX, frontierY, grid:@mapGrid)
 
       # Otherwise this frontier would point directly into a wall/room.
       return false if matchingFrontier.nil?
@@ -426,8 +432,7 @@ class IslandDungeon
           candidateFrontier, originX, originY)
       puts "[tryPlaceMap] canPlace = #{canPlace}"
       if canPlace
-        placed = placeMap(map, existingFrontier,
-            candidateFrontier, originX, originY)
+        placed = placeMap(map, existingFrontier, candidateFrontier, originX, originY)
         if placed
           return true
         end
@@ -437,13 +442,13 @@ class IslandDungeon
   end
 
   def placeMap(map, existingFrontier, candidateFrontier, originX, originY)
-    return false unless canPlaceMap(
-      map,
-      existingFrontier,
-      candidateFrontier,
-      originX,
-      originY
-    )
+    # return false unless canPlaceMap(
+    #   map,
+    #   existingFrontier,
+    #   candidateFrontier,
+    #   originX,
+    #   originY
+    # )
 
     # Store room origin
     map.originLocation = [originX, originY]
@@ -462,6 +467,7 @@ class IslandDungeon
     # Calculate absolute dungeon-grid location
     # for every frontier on the new map
     map.frontiers.each do |frontier|
+      frontier.age = @roomCount
 
       localX = frontier.localMapLocation[0]
       localY = frontier.localMapLocation[1]
@@ -480,7 +486,7 @@ class IslandDungeon
 
       puts "[placeMap] Checking frontier #{frontier.direction} at #{frontier.originLocation.inspect}"
 
-      matchingFrontier = getKissingFrontier(frontier)
+      matchingFrontier = frontier.getKissingFrontier(grid:@mapGrid)
 
       if matchingFrontier.nil?
         puts "[placeMap] No kissing frontier found"
@@ -577,65 +583,9 @@ class IslandDungeon
     return ret
   end
 
-  def getKissingFrontier(frontier, frontierX = nil, frontierY = nil)
-
-    if frontierX.nil? || frontierY.nil?
-      frontierX = frontier.originLocation[0]
-      frontierY = frontier.originLocation[1]
-    end
-
-    targetX, targetY = frontier.getTarget(frontierX, frontierY)
-
-    puts "[getKissingFrontier] targetX: #{targetX}, targetY: #{targetY}"
-
-    if targetX < 0 || targetY < 0
-      return nil
-    end
-
-    if targetX > @mapGrid.length || targetY > @mapGrid[0].length
-      return nil
-    end
-
-    targetMap = @mapGrid[targetX][targetY]
-
-    # If there is no map in the target space,
-    # then there cannot be a kissing frontier.
-    return nil if targetMap.nil?
-
-    oppositeDirection =
-      MapFrontier::OPPOSITE_DIRECTION[frontier.direction]
-
-    ret = nil
-
-    targetMap.frontiers.each do |otherFrontier|
-
-      correctLocation =
-        otherFrontier.originLocation == [targetX, targetY]
-
-      correctDirection =
-        otherFrontier.direction == oppositeDirection
-
-      isOpen =
-        otherFrontier.open?
-
-      if correctLocation && correctDirection && isOpen
-        ret = otherFrontier
-        break
-      end
-
-    end
-
-    return ret
-  end
-
   def connectFrontiers(frontier1, frontier2)
 
-    puts "[connectFrontiers] Connecting:"
-    puts "  #{frontier1.direction} #{frontier1.originLocation.inspect}"
-    puts "  #{frontier2.direction} #{frontier2.originLocation.inspect}"
-
-    frontier1.connectedFrontier = frontier2
-    frontier2.connectedFrontier = frontier1
+    frontier1.connectFrontier(frontier2)
 
     @availableFrontiers.delete(frontier1)
     @availableFrontiers.delete(frontier2)

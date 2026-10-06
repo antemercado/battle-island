@@ -98,6 +98,7 @@ class MapFrontier
   attr_accessor :direction # Direction the frontier faces
   attr_accessor :parentMap # The AbstractMap this frontier belongs to
   attr_accessor :frontierID
+  attr_accessor :age
 
   attr_accessor :engineMapCoords # The engine map's X,Y coordinates this should place the player at
   attr_accessor :engineMapFacingDir # What direction you should face coming out the exit
@@ -106,6 +107,9 @@ class MapFrontier
   attr_accessor :localMapLocation # Location in the AbstractRoom's grid from the upper left [0,0]
 
   attr_accessor :connectedFrontier
+
+  attr_accessor :ray
+  attr_accessor :interior
 
   def initialize(map, id, dir, engineX = 0, engineY = 0, localX = 0, localY = 0)
     @parentMap = map
@@ -117,6 +121,10 @@ class MapFrontier
 
     @originLocation = nil
     @connectedFrontier = nil
+
+    @ray = nil
+    @interior = nil
+    @age = 0
   end
 
   def getTarget(x = nil, y = nil)
@@ -132,4 +140,103 @@ class MapFrontier
     ret = @connectedFrontier.nil?
     return ret
   end
+
+  def getKissingFrontier(frontierX = nil, frontierY = nil, grid:)
+
+    if frontierX.nil? || frontierY.nil?
+      frontierX = @originLocation[0]
+      frontierY = @originLocation[1]
+    end
+
+    targetX, targetY = getTarget(frontierX, frontierY)
+
+    puts "[getKissingFrontier] targetX: #{targetX}, targetY: #{targetY}"
+
+    if targetX < 0 || targetY < 0
+      return nil
+    end
+
+    if targetX >= grid.length || targetY >= grid[0].length
+      return nil
+    end
+
+    targetMap = grid[targetX][targetY]
+
+    # If there is no map in the target space,
+    # then there cannot be a kissing frontier.
+    return nil if targetMap.nil?
+
+    oppositeDirection =
+      MapFrontier::OPPOSITE_DIRECTION[@direction]
+
+    ret = nil
+
+    targetMap.frontiers.each do |otherFrontier|
+
+      correctLocation =
+        otherFrontier.originLocation == [targetX, targetY]
+
+      correctDirection =
+        otherFrontier.direction == oppositeDirection
+
+      isOpen =
+        otherFrontier.open?
+
+      if correctLocation && correctDirection && isOpen
+        ret = otherFrontier
+        break
+      end
+
+    end
+
+    return ret
+  end
+
+  def connectFrontier(frontier)
+
+    puts "[connectFrontier] Connecting:"
+    puts "  #{@direction} #{@originLocation.inspect}"
+    puts "  #{frontier.direction} #{frontier.originLocation.inspect}"
+
+    @connectedFrontier = frontier
+    frontier.connectedFrontier = self
+
+  end
+
+end
+
+class FrontierRay
+
+  attr_accessor :frontier
+
+  attr_accessor :cells
+  attr_accessor :clearCells
+
+  attr_accessor :crossedRoom
+  attr_accessor :matchingFrontier
+
+  attr_accessor :resolved
+
+  def initialize(frontier)
+    if frontier.ray.nil?
+      frontier.ray = self
+    else
+      raise "FRONTIER ALREADY HAS FrontierRay!"
+    end
+    
+    @frontier = frontier
+    @cells = []
+    @clearCells = []
+    
+    @crossedRoom = false
+    @matchingFrontier = nil
+    
+    @resolved = false
+
+  end
+
+  def openSpaceCount()
+    return @clearCells.length
+  end
+
 end
