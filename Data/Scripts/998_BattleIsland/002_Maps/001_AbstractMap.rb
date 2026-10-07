@@ -29,7 +29,7 @@ class AbstractMap
   end
   
   def canBePlaced(dungeon) 
-    return false
+    return true
   end
 
   def getFrontiersByDirection(dir)
@@ -203,6 +203,22 @@ class MapFrontier
 
   end
 
+  def self.getOppositeDirection(dir)
+    return OPPOSITE_DIRECTION[dir]
+  end
+
+  def self.getDirectionOffset(dir)
+    return DIRECTION_OFFSET[dir]
+  end
+
+  def getOppositeDirection()
+    return MapFrontier.getOppositeDirection(@direction)
+  end
+
+  def getDirectionOffset()
+    return MapFrontier.getDirectionOffset(@direction)
+  end
+
 end
 
 class FrontierRay
@@ -233,10 +249,31 @@ class FrontierRay
     
     @resolved = false
 
+  def vertical?()
+    f = @frontier
+    return f.direction == :NORTH || f.direction == :SOUTH
+  end
+
+  def horizontal?()
+    f = @frontier
+    return f.direction == :EAST || f.direction == :WEST
+  end
+
   end
 
   def openSpaceCount()
     return @clearCells.length
+  end
+
+  def isPerpendicular?(ray)
+    return (self.vertical? && ray.horizontal?) || (self.horizontal? && ray.vertical?)
+  end
+
+  def isResolved?()
+    if @resolved.nil?
+      return false
+    end
+    return @resolved
   end
 
 end

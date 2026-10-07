@@ -63,21 +63,6 @@ class CaveCell
   end
 end
 
-class CaveRay
-
-  attr_accessor :frontier
-  attr_accessor :cells
-  attr_accessor :crossedRoom
-  attr_accessor :matchingFrontier
-
-  def initialize(frontier)
-    @frontier = frontier
-    @cells = []
-    @crossedRoom = false
-    @matchingFrontier = nil
-  end
-end
-
 class CaveGenerator
 
   attr_accessor :dungeon
@@ -105,13 +90,13 @@ class CaveGenerator
 
     # If a frontier casts a ray that would intersect with another ray
     # create a cave connecting the two.
-    # connectFrontiersToCaves(rays)
-
+    connectIntersectingRays(rays)
+    
     # If a frontier would cast a ray that intersects a cave, connect it
-    # connectIntersectingRays(rays)
+    connectFrontiersToCaves(rays)
 
     # Are the remaining frontiers interior or exterior
-    # classifyRemainingFrontiers(rays)
+    classifyRemainingFrontiers(rays)
 
     collapseCaveCells()
   end
@@ -132,7 +117,7 @@ class CaveGenerator
 
     currentX, currentY = frontier.getTarget()
 
-    offset = MapFrontier::DIRECTION_OFFSET[frontier.direction]
+    offset = frontier.getDirectionOffset()
     clearPath = true
 
     while inBounds?(currentX, currentY)
@@ -212,8 +197,8 @@ class CaveGenerator
 
     sourceFrontier = ray.frontier
     travelDirection = sourceFrontier.direction
-    reverseDirection = MapFrontier::OPPOSITE_DIRECTION[travelDirection]
-    destinationLocation =matchingFrontier.originLocation
+    reverseDirection = sourceFrontier.getOppositeDirection()
+    destinationLocation = matchingFrontier.originLocation
 
     ray.cells.each do |location|
       # The destination location belongs to the destination
@@ -264,7 +249,7 @@ class CaveGenerator
 
   def getOpposingFrontierAt(sourceFrontier, x, y)
 
-    requiredDirection = MapFrontier::OPPOSITE_DIRECTION[sourceFrontier.direction]
+    requiredDirection = sourceFrontier.getOppositeDirection()
     ret = nil
 
     @dungeon.availableFrontiers.each do |frontier|
@@ -348,6 +333,180 @@ class CaveGenerator
       @dungeon.connectFrontiers(f, kissingFrontier)
     end
     return true
+  end
+
+  def connectIntersectingRays(frontierRays)
+
+    unresolvedRays = frontierRays.select {|r| !r.isResolved?}
+
+    unresolvedRays.each do |ray1|
+      unresolvedRays.each do |ray2|
+        if ray2.equal?(ray1)
+          next
+        end
+
+        if !raysCanIntersect?(ray1, ray2)
+          next
+        end
+
+        intersection = getRayIntersection(ray1, ray2)
+
+        if intersection.nil?
+          next
+        end
+
+        markIntersectingCave(ray1, ray2, intersection)
+
+      end
+    end
+
+  end
+
+  def raysCanIntersect?(ray1, ray2)
+    return ray1.isPerpendicular?(ray2)
+  end
+
+  def getRayIntersection(ray1, ray2)
+    ret = nil
+    ray1.clearCells.each do |location|
+      if !ray2.clearCells.include?(location)
+        next
+      end
+      x = location[0]
+      y = location[1]
+
+      # If a cave already exists here, this should be
+      # handled by the later ray-to-existing-cave pass.
+      if !@caveGrid[x][y].nil?
+        next
+      end
+      
+      # Check to see if rays can reach intersection from frontier
+      # without hitting an existing caveCell
+  
+      ray1CanSee = rayHasViewOfLocation(ray1, location)
+      if !ray1CanSee
+        next
+      end
+      ray2CanSee = rayHasViewOfLocation(ray2, location)
+      if !ray2CanSee
+        next
+      end
+
+      ret = location
+      break
+    end
+
+    return ret
+  end
+
+  def markIntersectingCave(ray1, ray2, intersection)
+    success1 = markCaveToLocation(ray1, intersection)
+
+    if !success1
+      return false
+    end
+
+    success2 = markCaveToLocation(ray2, intersection)
+
+    if !success2
+      return false
+    end
+
+    puts "[markIntersectingCave] Connected:"
+    puts "  #{ray1.frontier.direction} #{ray1.frontier.originLocation.inspect}"
+    puts "  #{ray2.frontier.direction} #{ray2.frontier.originLocation.inspect}"
+    puts "  Intersection: #{intersection.inspect}"
+
+    return true
+  end
+
+  def markCaveToLocation(ray, intersection)
+
+    travelDirection = ray.frontier.direction
+    reverseDirection = ray.frontier.getOppositeDirection()
+
+    ray.clearCells.each do |location|
+      x = location[0]
+
+      y = location[1]
+
+      caveCell = getOrCreateCaveCell(x,y)
+
+      if location == intersection
+        # The path ends here, so this cell only needs
+        # to point back toward the source frontier.
+        caveCell.addConnection(reverseDirection)
+        return true
+      end
+      # Intermediate cells are straight tunnel pieces.
+      caveCell.addConnection(travelDirection)
+      caveCell.addConnection(reverseDirection)
+    end
+    return false
+  end
+
+  def rayHasViewOfLocation(ray, targetLocation)
+    ray.clearCells.each do |location|
+      if location == targetLocation
+        return true
+      end
+      x = location[0]
+      y = location[1]
+      caveCell = @caveGrid[x][y]
+      if !caveCell.nil?
+        return false
+      end
+    end
+    return false
+  end
+
+  def connectFrontiersToCaves(frontierRays)
+    frontierRays.each do |ray|
+      if ray.resolved
+        next
+      end
+      caveCell = getFirstBlocker(ray, @caveGrid)
+      if caveCell.nil?
+        next
+      end
+      success = markRayToCave(ray, caveCell)
+      if success
+        ray.resolved = true
+      end
+    end
+  end
+
+  def getFirstBlocker(ray, grid)
+    ray.clearCells.each do |location|
+      x = location[0]
+      y = location[1]
+      blocker = grid[x][y]
+      if !blocker.nil?
+        return blocker
+      end
+    end
+    return nil
+  end
+
+  def markRayToCave(ray, caveCell)
+    targetLocation = caveCell.originLocation
+    success = markCaveToLocation(ray, targetLocation)
+    if !success
+      return false
+    end
+    return true
+  end
+
+  def classifyRemainingFrontiers(frontierRays)
+    frontierRays.each do |ray|
+      frontier = ray.frontier
+      if ray.crossedRoom
+        frontier.interior = true
+      else
+        frontier.interior = false
+      end
+    end
   end
 
 end

@@ -29,6 +29,13 @@ class IslandDungeon
     @centerY = nil
     @currentMap = nil
     @roomCount = 0
+
+    @mapPools = {
+      :NORTH  => [],
+      :EAST   => [],
+      :SOUTH  => [],
+      :WEST   => []
+    }
   end
 
   # TODO: Should probably seperate this all into a IslandGenerator class
@@ -51,7 +58,7 @@ class IslandDungeon
     @roomCount = 0
 
     # Get map pool
-    @mapPool = getMapPool()
+    declareMapPool()
 
     # Place map at center of grid
     initialPlacement()   
@@ -75,7 +82,7 @@ class IslandDungeon
     @mapGrid[@centerX][@centerY] = centerMap
     centerMap.frontiers.each do |f|
       f.originLocation = [@centerX, @centerY]
-      @availableFrontiers << f
+      @availableFrontiers.push(f)
     end
     puts "[initialPlacement] Center map placed at #{@centerX},#{@centerY}"
 
@@ -85,6 +92,14 @@ class IslandDungeon
     # Place a room at each radial direction from center
     openingFrontiers = @availableFrontiers.shuffle(random: @DungeonRNG)
 
+    until openingFrontiers.empty?
+      frontier = openingFrontiers.shift
+      openingMap = getMapToPlace(frontier.getOppositeDirection())
+      success = tryPlaceMap(openingMap, frontier)
+      if !success
+        openingFrontiers.push(frontier)
+      end
+    end
     openingFrontiers.each do |f|
       openingMap = ExampleCross.new()
       tryPlaceMap(openingMap, f)
@@ -97,7 +112,7 @@ class IslandDungeon
     while placed < number && @roomCount < MAX_ROOMS && (MAX_FAILURES < 0 || branchingFailures < MAX_FAILURES)
       puts "[generatorRooms] Placing map number #{roomCount + 1}..."
       branchingFrontier = getFrontierBranch()
-      branchMap = getMapToPlace()
+      branchMap = getMapToPlace(branchingFrontier.getOppositeDirection())
 
       success = tryPlaceMap(branchMap, branchingFrontier)
       if success
@@ -287,8 +302,7 @@ class IslandDungeon
 
     # 1. Candidate frontier must face the existing frontier
     puts "[canPlaceMap] 1. Can candidate face existing frontier..."
-    return false unless candidateFrontier.direction ==
-      MapFrontier::OPPOSITE_DIRECTION[existingFrontier.direction]
+    return false unless candidateFrontier.direction == existingFrontier.getOppositeDirection()
 
     # 2. Check every grid cell the map would occupy
     puts "[canPlaceMap] 2. Check every grid cell the map would occupy..."
@@ -408,8 +422,7 @@ class IslandDungeon
   def tryPlaceMap(map, existingFrontier)
 
     puts "[tryPlaceMap] Getting valid frontiers..."
-    validFrontiers = map.getFrontiersByDirection(
-      MapFrontier::OPPOSITE_DIRECTION[existingFrontier.direction])
+    validFrontiers = map.getFrontiersByDirection(existingFrontier.getOppositeDirection())
 
     validFrontiers = validFrontiers.shuffle(random: @DungeonRNG)
 
@@ -510,37 +523,23 @@ class IslandDungeon
     return ret
   end
 
-  def getMapPool()
-    ret = [
-      ExampleCross,
-      NTrident,
-      STrident,
-      BigCross,
-      EWStraight,
-      NSStraight
-    ]
-    return ret
+  def declareMapPool()
+    mapClasses = biGetOverworldMapClasses()
+
+    mapClasses.each do |mapClass|
+      map = mapClass.new()
+      map.frontiers.each do |frontier|
+        mapPool = @mapPools[frontier.direction]
+        if !mapPool.include?(mapClass)
+          mapPool.push(mapClass)
+        end
+      end
+    end
+    return true
   end
 
-  def getCaveMapPool()
-    ret = [
-      CaveCross,
-      CaveNS,
-      CaveEW,
-      CaveSE,
-      CaveNE,
-      CaveNW,
-      CaveSW,
-      CaveNEW,
-      CaveSEW,
-      CaveNES,
-      CaveNWS
-    ]
-    return ret
-  end
-
-  def getMapToPlace()
-    mapClass = @mapPool.sample(random: @DungeonRNG)
+  def getMapToPlace(frontierDir)
+    mapClass = @mapPools[frontierDir].sample(random: @DungeonRNG)
     return mapClass.new()
   end
 
