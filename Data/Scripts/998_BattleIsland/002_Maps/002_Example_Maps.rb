@@ -33,13 +33,13 @@ class ExampleCross < AbstractMap
     dir.each do |x|
       case x
       when :NORTH
-        @frontiers.push((MapFrontier.new(self, 0, x, 9, 2)))
+        @frontiers.push((MapFrontier.new(self, 0, x, 14, 6)))
       when :EAST
-        @frontiers.push((MapFrontier.new(self, 1, x, 15, 7)))
+        @frontiers.push((MapFrontier.new(self, 1, x, 20, 12)))
       when :SOUTH
-        @frontiers.push((MapFrontier.new(self, 2, x, 9, 13)))
+        @frontiers.push((MapFrontier.new(self, 2, x, 14, 17)))
       when :WEST
-        @frontiers.push((MapFrontier.new(self, 3, x, 3, 7)))
+        @frontiers.push((MapFrontier.new(self, 3, x, 8, 12)))
       end
     end
   end

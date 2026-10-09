@@ -1,11 +1,16 @@
 class DungeonManager
 
   attr_accessor :currentDungeon
+  attr_accessor :minLevel
+  attr_accessor :maxLevel
 
   def newDungeon(seed=-1)
     currentDungeon = IslandDungeon.new()
     currentDungeon.generate(seed)
     @currentDungeon = currentDungeon
+    @minLevel = 5
+    @maxLevel = 10
+    $PokemonEncounters = DungeonPokemonEncounters.new
   end
 
   def transferMaps(frontierID)
@@ -26,6 +31,8 @@ class DungeonManager
 
     destinationMap = connectedFrontier.parentMap
     @currentDungeon.currentMap = destinationMap
+
+    $PokemonEncounters.setup(destinationMap)
     
     # Engine Transfer Logic
     $game_temp.player_new_x = connectedFrontier.engineMapCoords[0]
@@ -39,16 +46,31 @@ class DungeonManager
     puts "[transferMaps] Moved to [#{connectedFrontier.originLocation[0]},#{connectedFrontier.originLocation[1]}]"
   end
 
-def enterMap(map, engineX = nil, engineY = nil)
-  if @currentDungeon.nil? || map.nil?
-    return false
+  
+  def enterMap(map, engineX = nil, engineY = nil)
+    if @currentDungeon.nil? || map.nil?
+      return false
+    end
+    
+    @currentDungeon.currentMap = map
+    $PokemonEncounters.setup(map)
+    
+    map.enterMap(engineX, engineY)
+    return true
   end
 
-  @currentDungeon.currentMap = map
+  def hasEncounters?()
+    terrainTag = $game_map.terrain_tag($game_player.x, $game_player.y)
+    return terrainTag.land_wild_encounters
+  end
 
-  map.enterMap(engineX, engineY)
-  return true
-end
+  def inDungeon?()
+    return true
+  end
+
+  def getCurrRoom()
+    return @currentDungeon.currentMap
+  end
 
 end
 #----------------------------
