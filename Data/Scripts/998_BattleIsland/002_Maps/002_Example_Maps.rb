@@ -42,6 +42,9 @@ class ExampleCross < AbstractMap
         @frontiers.push((MapFrontier.new(self, 3, x, 8, 12)))
       end
     end
+
+    exampleES = ExampleEncounterSet.new()
+    exampleES.addToMapEncounter(@mapEncounters, :Land, 15, 25)
   end
 
   def canBePlaced(dungeon)

@@ -12,10 +12,10 @@ class AbstractMap
   attr_accessor :trainerList
   attr_accessor :itemList
 
-  attr_accessor :encounters
+  attr_accessor :mapEncounters
 
   def initialize
-    @encounters = AbstractEncounters.new
+    @mapEncounters = MapEncounters.new
   end
 
   def self.frontierCount()

@@ -12,9 +12,9 @@ class DungeonPokemonEncounters < PokemonEncounters
       return
     end
     super(dungeonMap.engineID)
-    @encounter_tables = dungeonMap.encounters.getEncounterTable($DungeonManager.minLevel, $DungeonManager.maxLevel)
+    @encounter_tables = dungeonMap.mapEncounters.encounterTable
     puts "[setup] #{@encounter_tables}"
-    dungeonMap.encounters.getEncounterChances().each { |type, value|
+    dungeonMap.mapEncounters.encounterChances.each { |type, value|
       @step_chances[type] = value
     }
     puts "[setup] #{@step_chances}"
