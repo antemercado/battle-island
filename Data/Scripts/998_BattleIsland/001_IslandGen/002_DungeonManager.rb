@@ -1,6 +1,8 @@
 class DungeonManager
 
   attr_accessor :currentDungeon
+  attr_accessor :currentMap
+
   attr_accessor :minLevel
   attr_accessor :maxLevel
 
@@ -36,8 +38,7 @@ class DungeonManager
   end
 
   def transferMaps(frontierID)
-    currentMap = @currentDungeon.currentMap
-    frontier = currentMap.getFrontierByID(frontierID)
+    frontier = @currentMap.getFrontierByID(frontierID)
 
     # No frontier matching ID
     if frontier.nil?
@@ -52,7 +53,7 @@ class DungeonManager
     end
 
     destinationMap = connectedFrontier.parentMap
-    @currentDungeon.currentMap = destinationMap
+    @currentMap = destinationMap
 
     $PokemonEncounters.setup(destinationMap)
     
@@ -74,7 +75,7 @@ class DungeonManager
       return false
     end
     
-    @currentDungeon.currentMap = map
+    @currentMap = map
     $PokemonEncounters.setup(map)
     
     map.enterMap(engineX, engineY)
@@ -91,7 +92,7 @@ class DungeonManager
   end
 
   def getCurrRoom()
-    return @currentDungeon.currentMap
+    return @currentMap
   end
 
   def setValidSpecies()

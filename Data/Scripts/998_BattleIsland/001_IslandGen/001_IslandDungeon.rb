@@ -13,8 +13,6 @@ class IslandDungeon
 
   attr_accessor :roomCount
 
-  attr_accessor :currentMap
-
   GRID_SIZE = 100
   MAX_ROOMS = 20
   MAX_FAILURES = 100
@@ -27,7 +25,6 @@ class IslandDungeon
     @availableFrontiers = nil
     @centerX = nil
     @centerY = nil
-    @currentMap = nil
     @roomCount = 0
 
     @branchingFailures = 0
@@ -101,7 +98,7 @@ class IslandDungeon
     end
 
     # Make currentMap the center map for testing purposes
-    @currentMap = centerMap
+    $DungeonManager.currentMap = centerMap
 
     # Place a room at each radial direction from center
     openingFrontiers = @availableFrontiers.shuffle(random: @DungeonRNG)
