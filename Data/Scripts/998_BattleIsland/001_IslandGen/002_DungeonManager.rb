@@ -11,6 +11,8 @@ class DungeonManager
 
   attr_reader :validSpecies
 
+  VENDING_MACHINE_PERCENT = 0.2
+
   def newDungeon(seed=-1)
     @DungeonRNG = Random.new(seed)
     @EncounterRNG = Random.new(seed)
@@ -33,8 +35,10 @@ class DungeonManager
     end
 
     @currentDungeon = currentDungeon
-
+    
     $PokemonEncounters = DungeonPokemonEncounters.new
+    
+    updateVendingMachines()
   end
 
   def transferMaps(frontierID)
@@ -56,7 +60,8 @@ class DungeonManager
     @currentMap = destinationMap
 
     $PokemonEncounters.setup(destinationMap)
-    
+    $game_switches[76] = destinationMap.hasVendingMachine
+
     # Engine Transfer Logic
     $game_temp.player_new_x = connectedFrontier.engineMapCoords[0]
     $game_temp.player_new_y = connectedFrontier.engineMapCoords[1]
@@ -76,7 +81,9 @@ class DungeonManager
     end
     
     @currentMap = map
+
     $PokemonEncounters.setup(map)
+    $game_switches[76] = map.hasVendingMachine
     
     map.enterMap(engineX, engineY)
     return true
@@ -113,6 +120,18 @@ class DungeonManager
       end
     end
     arr.sample(random: random)
+  end
+
+  def updateVendingMachines()
+    allMaps = @currentDungeon.mapHash.values.shuffle(random: @DungeonRNG)
+    sampleCount = VENDING_MACHINE_PERCENT * allMaps.length
+    allMaps.each_with_index do |map, i|
+      if i <= sampleCount || map.instance_of?(DreamCornerMap)
+        map.hasVendingMachine = true
+      else
+        map.hasVendingMachine = false
+      end
+    end
   end
 
 end

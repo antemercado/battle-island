@@ -7,6 +7,8 @@ class IslandDungeon
   attr_accessor :mapGrid
   attr_accessor :caveGrid
 
+  attr_reader   :mapHash
+
   attr_accessor :availableFrontiers
   attr_accessor :centerX
   attr_accessor :centerY
@@ -22,6 +24,7 @@ class IslandDungeon
     @seed = nil
     @mapGrid = nil
     @caveGrid = nil
+    @mapHash = {}
     @availableFrontiers = nil
     @centerX = nil
     @centerY = nil
@@ -503,6 +506,7 @@ class IslandDungeon
     end
 
     @roomCount += 1
+    @mapHash[map.originLocation] = map
     return true
   end
 

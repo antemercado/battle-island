@@ -14,6 +14,8 @@ class AbstractMap
 
   attr_accessor :mapEncounters
 
+  attr_accessor :hasVendingMachine
+
   def initialize
     @mapEncounters = MapEncounters.new
   end
