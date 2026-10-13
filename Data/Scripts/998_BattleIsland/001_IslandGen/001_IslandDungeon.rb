@@ -17,10 +17,10 @@ class IslandDungeon
 
   GRID_SIZE = 100
   MAX_ROOMS = 20
-  MAX_FAILURES = -1
+  MAX_FAILURES = 100
 
   def initialize()
-    @DungeonRNG = nil
+    @DungeonRNG = $DungeonManager.DungeonRNG
     @seed = nil
     @mapGrid = nil
     @caveGrid = nil
@@ -29,6 +29,8 @@ class IslandDungeon
     @centerY = nil
     @currentMap = nil
     @roomCount = 0
+
+    @branchingFailures = 0
 
     @mapPools = {
       :NORTH  => [],
@@ -42,11 +44,12 @@ class IslandDungeon
   #         that can then hold different generators to call.
   def generate(seed = -1)
 
+    @branchingFailures = 0
+
     if seed == -1
-      seed = rand(10_000_000..99_999_999)
+      seed = $DungeonManager.DungeonRNG.rand(10_000_000..99_999_999)
     end
     @seed = seed
-    @DungeonRNG = Random.new(seed)
 
     @mapGrid = Array.new(GRID_SIZE) { Array.new GRID_SIZE }
     @caveGrid = Array.new(GRID_SIZE) { Array.new GRID_SIZE }
@@ -61,10 +64,22 @@ class IslandDungeon
     declareMapPool()
 
     # Place map at center of grid
-    initialPlacement()   
+    success = initialPlacement()
+
+    if !success
+      puts "FAILED TO GENERATE MAP: CAN'T PLACE INITIAL ROOMS"
+      puts "FAILED TO GENERATE MAP: SEED #{@seed}"
+      return false
+    end
 
     # Place rooms until MAX_ROOMS is placed
-    generateRooms()
+    roomsPlaced = generateRooms()
+
+    if !roomsPlaced
+      puts "FAILED TO GENERATE MAP: TOO MANY ROOM GENERATION FAILURES"
+      puts "FAILED TO GENERATE MAP: SEED #{@seed}"
+      return false
+    end
 
     # Cave Generation
     @caveGen = CaveGenerator.new(self)
@@ -84,7 +99,6 @@ class IslandDungeon
       f.originLocation = [@centerX, @centerY]
       @availableFrontiers.push(f)
     end
-    puts "[initialPlacement] Center map placed at #{@centerX},#{@centerY}"
 
     # Make currentMap the center map for testing purposes
     @currentMap = centerMap
@@ -98,33 +112,30 @@ class IslandDungeon
       success = tryPlaceMap(openingMap, frontier)
       if !success
         openingFrontiers.push(frontier)
+        if @branchingFailures >= MAX_FAILURES
+          return false
+        end
       end
     end
-    openingFrontiers.each do |f|
-      openingMap = ExampleCross.new()
-      tryPlaceMap(openingMap, f)
-    end
+    return true
   end
 
   def generateRooms(number = MAX_ROOMS)
     placed = 0
-    branchingFailures = 0
-    while placed < number && @roomCount < MAX_ROOMS && (MAX_FAILURES < 0 || branchingFailures < MAX_FAILURES)
-      puts "[generatorRooms] Placing map number #{roomCount + 1}..."
+    # @branchingFailures = 0
+    while placed < number && @roomCount < MAX_ROOMS && (MAX_FAILURES < 0 || @branchingFailures < MAX_FAILURES)
       branchingFrontier = getFrontierBranch()
       branchMap = getMapToPlace(branchingFrontier.getOppositeDirection())
 
       success = tryPlaceMap(branchMap, branchingFrontier)
       if success
-        branchingFailures = 0
-        puts "[generatorRooms] Map #{roomCount} placed!"
+        placed += 1
+        # @branchingFailures = 0
       else
-        branchingFailures += 1
-        puts "[generatorRooms] MAP FAILED TO PLACE. FAILURE COUNT: #{branchingFailures}/#{MAX_FAILURES}"
       end
     end
 
-    if branchingFailures >= MAX_FAILURES
+    if @branchingFailures >= MAX_FAILURES
       return nil
     end
     return placed
@@ -136,7 +147,7 @@ class IslandDungeon
 
     frontiersToClose.each do |f|
       deadEnd = getDeadEndMap(f)
-
+      
       success = tryPlaceMap(deadEnd, f)
       if !success
         puts "[placeDeadEnds] FAILED TO PLACE DEAD-END MAP!"
@@ -301,18 +312,14 @@ class IslandDungeon
   def canPlaceMap(map, existingFrontier, candidateFrontier, originX, originY)
 
     # 1. Candidate frontier must face the existing frontier
-    puts "[canPlaceMap] 1. Can candidate face existing frontier..."
     return false unless candidateFrontier.direction == existingFrontier.getOppositeDirection()
 
     # 2. Check every grid cell the map would occupy
-    puts "[canPlaceMap] 2. Check every grid cell the map would occupy..."
     for localX in 0...map.mapWidth
       for localY in 0...map.mapHeight
 
         gridX = originX + localX
         gridY = originY + localY
-
-        puts "[canPlaceMap]: Checking [#{gridX},#{gridY}]"
 
         # Out of bounds
         if gridX < 0 || gridY < 0
@@ -382,7 +389,6 @@ class IslandDungeon
 
     # 3. Check that every unused frontier would still point
     #    into an empty dungeon-grid cell
-    puts "[canPlaceMap] 3. Check that every unused frontier..."
     map.frontiers.each do |frontier|
       next if frontier.equal?(candidateFrontier)
 
@@ -412,7 +418,6 @@ class IslandDungeon
     end
 
     # 4. Let the map check its own generation-specific rules
-    puts "[canPlaceMap] 4. Check maps own specific rules..."
     return false unless map.canBePlaced(self)
 
     return true
@@ -421,12 +426,10 @@ class IslandDungeon
   # Looks at all the valid frontiers this map has in the direction and attmepts to place them
   def tryPlaceMap(map, existingFrontier)
 
-    puts "[tryPlaceMap] Getting valid frontiers..."
     validFrontiers = map.getFrontiersByDirection(existingFrontier.getOppositeDirection())
 
     validFrontiers = validFrontiers.shuffle(random: @DungeonRNG)
 
-    puts "[tryPlaceMap] Trying candidate frontiers..."
     validFrontiers.each do |candidateFrontier|
 
       originX, originY =
@@ -435,15 +438,8 @@ class IslandDungeon
           candidateFrontier
         )
 
-      puts "[tryPlaceMap] Existing frontier direction: #{existingFrontier.direction}"
-      puts "[tryPlaceMap] Existing frontier location: #{existingFrontier.originLocation.inspect}"
-      puts "[tryPlaceMap] Candidate frontier direction: #{candidateFrontier.direction}"
-      puts "[tryPlaceMap] Candidate local location: #{candidateFrontier.localMapLocation.inspect}"
-      puts "[tryPlaceMap] Placement origin: #{originX},#{originY}"
-
       canPlace = canPlaceMap(map, existingFrontier,
           candidateFrontier, originX, originY)
-      puts "[tryPlaceMap] canPlace = #{canPlace}"
       if canPlace
         placed = placeMap(map, existingFrontier, candidateFrontier, originX, originY)
         if placed
@@ -451,6 +447,8 @@ class IslandDungeon
         end
       end
     end
+    @branchingFailures += 1
+    puts "[tryPlaceMap] MAP FAILED TO PLACE. FAILURE COUNT: #{@branchingFailures}/#{MAX_FAILURES}"
     return false
   end
 
@@ -497,24 +495,17 @@ class IslandDungeon
     map.frontiers.each do |frontier|
       next if frontier.equal?(candidateFrontier)
 
-      puts "[placeMap] Checking frontier #{frontier.direction} at #{frontier.originLocation.inspect}"
-
       matchingFrontier = frontier.getKissingFrontier(grid:@mapGrid)
 
       if matchingFrontier.nil?
-        puts "[placeMap] No kissing frontier found"
         @availableFrontiers << frontier
       else
-        puts "[placeMap] Kissing frontier found: #{matchingFrontier.direction} at #{matchingFrontier.originLocation.inspect}"
         connectFrontiers(frontier, matchingFrontier)
       end
 
     end
 
     @roomCount += 1
-    puts "[placeMap] #{map.class.name} Placed!"
-    puts "[placeMap] #{map.mapWidth} x #{map.mapHeight} Map placed at #{originX},#{originY}"
-
     return true
   end
 
@@ -588,8 +579,6 @@ class IslandDungeon
 
     @availableFrontiers.delete(frontier1)
     @availableFrontiers.delete(frontier2)
-
-    puts "[connectFrontiers] Frontier count now: #{@availableFrontiers.length}"
 
   end
 

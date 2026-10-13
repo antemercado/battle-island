@@ -188,8 +188,6 @@ class CaveGenerator
       end
     end
 
-    puts "[connectOpposingFrontiers] Created #{connectionCount} cave connections"
-
     return connectionCount
   end
 
@@ -215,9 +213,6 @@ class CaveGenerator
       caveCell.addConnection(travelDirection)
       caveCell.addConnection(reverseDirection)
     end
-    puts "[markOpposingCave] Connected:"
-    puts "  #{sourceFrontier.direction} #{sourceFrontier.originLocation.inspect}"
-    puts "  #{matchingFrontier.direction} #{matchingFrontier.originLocation.inspect}"
     return true
   end
 
@@ -283,7 +278,6 @@ class CaveGenerator
       end
 
       @caveGrid[x][y] = caveMap
-      puts "[collapseCaveCells] #{caveMap.class.name} Placed at  #{x} x #{y}!"
     end
 
     connectCaveMaps()
@@ -412,11 +406,6 @@ class CaveGenerator
     if !success2
       return false
     end
-
-    puts "[markIntersectingCave] Connected:"
-    puts "  #{ray1.frontier.direction} #{ray1.frontier.originLocation.inspect}"
-    puts "  #{ray2.frontier.direction} #{ray2.frontier.originLocation.inspect}"
-    puts "  Intersection: #{intersection.inspect}"
 
     return true
   end

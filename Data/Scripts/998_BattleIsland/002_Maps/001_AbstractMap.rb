@@ -156,8 +156,6 @@ class MapFrontier
 
     targetX, targetY = getTarget(frontierX, frontierY)
 
-    puts "[getKissingFrontier] targetX: #{targetX}, targetY: #{targetY}"
-
     if targetX < 0 || targetY < 0
       return nil
     end
@@ -199,10 +197,6 @@ class MapFrontier
   end
 
   def connectFrontier(frontier)
-
-    puts "[connectFrontier] Connecting:"
-    puts "  #{@direction} #{@originLocation.inspect}"
-    puts "  #{frontier.direction} #{frontier.originLocation.inspect}"
 
     @connectedFrontier = frontier
     frontier.connectedFrontier = self

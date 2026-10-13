@@ -4,12 +4,34 @@ class DungeonManager
   attr_accessor :minLevel
   attr_accessor :maxLevel
 
+  attr_reader :DungeonRNG
+  attr_reader :EncounterRNG
+
+  attr_reader :validSpecies
+
   def newDungeon(seed=-1)
-    currentDungeon = IslandDungeon.new()
-    currentDungeon.generate(seed)
-    @currentDungeon = currentDungeon
+    @DungeonRNG = Random.new(seed)
+    @EncounterRNG = Random.new(seed)
+    
     @minLevel = 5
     @maxLevel = 10
+
+    @validSpecies = []
+    setValidSpecies()
+
+    dungeonGenerated = false
+    dungeonSeed = seed
+    currentDungeon = IslandDungeon.new()
+    until dungeonGenerated
+      puts "[DungeonManger] New seed = #{dungeonSeed}"
+      dungeonGenerated = currentDungeon.generate(dungeonSeed)
+      if !dungeonGenerated
+        dungeonSeed = @DungeonRNG.rand(10_000_000..99_999_999)
+      end
+    end
+
+    @currentDungeon = currentDungeon
+
     $PokemonEncounters = DungeonPokemonEncounters.new
   end
 
@@ -70,6 +92,26 @@ class DungeonManager
 
   def getCurrRoom()
     return @currentDungeon.currentMap
+  end
+
+  def setValidSpecies()
+    GameData::Species.each do |s|
+      @validSpecies.push(s)
+    end
+  end
+
+  def getRandomSpeciesID(random = @EncounterRNG)
+    @validSpecies.sample(random: random).id
+  end
+
+  def getRandomSpeciesIDByType(type, random = @EncounterRNG)
+    arr = []
+    @validSpecies.each do |s|
+      if s.types.include?(type)
+        arr.push(s.id)
+      end
+    end
+    arr.sample(random: random)
   end
 
 end
