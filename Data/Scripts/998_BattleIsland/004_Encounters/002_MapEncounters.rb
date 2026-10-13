@@ -61,4 +61,15 @@ class MapEncounters
     end
     @encounterTable[key] = Array(@encounterTable[key]) + arr
   end
+
+  def randomize(key, encounterAmount = 5)
+    tmpArr = @encounterTable[key].clone
+    encounterTable[key] = tmpArr.sample(encounterAmount, random: $DungeonManager.EncounterRNG)
+  end
+
+  def randomizeAll(encounterAmount = 5)
+    @encounterTable.each do |key, value|
+      randomize(key, encounterAmount)
+    end
+  end
 end

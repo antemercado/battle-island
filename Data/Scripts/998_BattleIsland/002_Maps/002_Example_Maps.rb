@@ -45,6 +45,9 @@ class ExampleCross < AbstractMap
 
     exampleES = ExampleEncounterSet.new()
     exampleES.addToMapEncounter(@mapEncounters, :Land, 15, 25)
+    randomES = TypalEncounterSet.new(:NORMAL)
+    randomES.addToMapEncounter(@mapEncounters, :Land, 15, 25)
+    @mapEncounters.randomizeAll()
   end
 
   def canBePlaced(dungeon)

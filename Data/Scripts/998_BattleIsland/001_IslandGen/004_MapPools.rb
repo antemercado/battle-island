@@ -5,7 +5,8 @@ def biGetOverworldMapClasses()
     STrident,
     BigCross,
     EWStraight,
-    NSStraight
+    NSStraight,
+    DreamCornerMap,
   ]
   return ret
 end

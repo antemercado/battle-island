@@ -43,3 +43,35 @@ class ExampleEncounterSet < AbstractEncounterSet
     end
   end
 end
+
+# A basic encounter set with iconic pokemon for testing
+class TypalEncounterSet < AbstractEncounterSet
+  def initialize(type)
+    super()
+    tmp = [:Land, :Cave, :Water]
+    tmp.each do |key|
+      speciesArr = []
+      case key
+      when :Land
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+      when :Cave
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+      when :Water
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+      end
+      @speciesHash[key] = speciesArr
+    end
+  end
+end
