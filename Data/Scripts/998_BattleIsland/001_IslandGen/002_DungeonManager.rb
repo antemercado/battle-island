@@ -126,7 +126,9 @@ class DungeonManager
     allMaps = @currentDungeon.mapHash.values.shuffle(random: @DungeonRNG)
     sampleCount = VendingMachine::VENDING_MACHINE_PERCENT * allMaps.length
     allMaps.each_with_index do |map, i|
-      if i <= sampleCount || map.instance_of?(DreamCornerMap)
+      if i <= sampleCount
+        # Add below for debugging
+        # || map.instance_of?(DreamCornerMap)
         map.vendingMachine = VendingMachine.new(map.typeArray)
       else
         map.vendingMachine = nil
