@@ -27,8 +27,10 @@ class DreamCornerMap < AbstractMap
     @frontiers.push((MapFrontier.new(self, 0, :NORTH, 23, 6)))
     @frontiers.push((MapFrontier.new(self, 1, :EAST, 41, 24)))
 
-    randomES = TypalEncounterSet.new(:FAIRY)
+    @typeArray = [:FAIRY, :NORMAL]
+    randomES = TypalEncounterSet.new(@typeArray)
     randomES.addToMapEncounter(@mapEncounters, :Land, 15, 25)
+
   end
 
   def canBePlaced(dungeon)

@@ -12,12 +12,16 @@ class AbstractMap
   attr_accessor :trainerList
   attr_accessor :itemList
 
+  attr_reader   :typeArray
+
   attr_accessor :mapEncounters
 
-  attr_accessor :hasVendingMachine
+  attr_accessor :vendingMachine
 
   def initialize
     @mapEncounters = MapEncounters.new
+    @vendingMachine = nil
+    @typeArray = [:NORMAL, :NORMAL]
   end
 
   def self.frontierCount()

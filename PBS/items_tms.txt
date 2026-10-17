@@ -1,0 +1,2508 @@
+#-------------------------------
+[TM_TAKEDOWN]
+Name = TM000
+NamePlural = TM000s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = TAKEDOWN
+Description = A reckless full-body charge attack for slamming into the target. This also damages the user a little.
+#-------------------------------
+[TM_CHARM]
+Name = TM001
+NamePlural = TM001s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = CHARM
+Description = TBD
+#-------------------------------
+[TM_FAKETEARS]
+Name = TM002
+NamePlural = TM002s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = FAKETEARS
+Description = TBD
+#-------------------------------
+[TM_AGILITY]
+Name = TM003
+NamePlural = TM003s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = AGILITY
+Description = TBD
+#-------------------------------
+[TM_MUDSLAP]
+Name = TM004
+NamePlural = TM004s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_20
+Move = MUDSLAP
+Description = TBD
+#-------------------------------
+[TM_SCARYFACE]
+Name = TM005
+NamePlural = TM005s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SCARYFACE
+Description = TBD
+#-------------------------------
+[TM_PROTECT]
+Name = TM006
+NamePlural = TM006s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = PROTECT
+Description = TBD
+#-------------------------------
+[TM_FIREFANG]
+Name = TM007
+NamePlural = TM007s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = FIREFANG
+Description = TBD
+#-------------------------------
+[TM_THUNDERFANG]
+Name = TM008
+NamePlural = TM008s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = THUNDERFANG
+Description = TBD
+#-------------------------------
+[TM_ICEFANG]
+Name = TM009
+NamePlural = TM009s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = ICEFANG
+Description = TBD
+#-------------------------------
+[TM_WATERPULSE]
+Name = TM010
+NamePlural = TM010s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = WATERPULSE
+Description = TBD
+#-------------------------------
+[TM_LOWKICK]
+Name = TM011
+NamePlural = TM011s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = LOWKICK
+Description = TBD
+#-------------------------------
+[TM_ACIDSPRAY]
+Name = TM012
+NamePlural = TM012s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_40
+Move = ACIDSPRAY
+Description = TBD
+#-------------------------------
+[TM_ACROBATICS]
+Name = TM013
+NamePlural = TM013s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_55
+Move = ACROBATICS
+Description = TBD
+#-------------------------------
+[TM_STRUGGLEBUG]
+Name = TM014
+NamePlural = TM014s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = STRUGGLEBUG
+Description = TBD
+#-------------------------------
+[TM_PSYBEAM]
+Name = TM015
+NamePlural = TM015s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = PSYBEAM
+Description = TBD
+#-------------------------------
+[TM_CONFUSERAY]
+Name = TM016
+NamePlural = TM016s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = CONFUSERAY
+Description = TBD
+#-------------------------------
+[TM_THIEF]
+Name = TM017
+NamePlural = TM017s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = THIEF
+Description = TBD
+#-------------------------------
+[TM_DISARMINGVOICE]
+Name = TM018
+NamePlural = TM018s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_40
+Move = DISARMINGVOICE
+Description = TBD
+#-------------------------------
+[TM_TRAILBLAZE]
+Name = TM019
+NamePlural = TM019s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = TRAILBLAZE
+Description = TBD
+#-------------------------------
+[TM_POUNCE]
+Name = TM020
+NamePlural = TM020s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = POUNCE
+Description = TBD
+#-------------------------------
+[TM_CHILLINGWATER]
+Name = TM021
+NamePlural = TM021s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = CHILLINGWATER
+Description = TBD
+#-------------------------------
+[TM_CHARGEBEAM]
+Name = TM022
+NamePlural = TM022s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = CHARGEBEAM
+Description = TBD
+#-------------------------------
+[TM_FIRESPIN]
+Name = TM023
+NamePlural = TM023s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_35
+Move = FIRESPIN
+Description = TBD
+#-------------------------------
+[TM_FACADE]
+Name = TM024
+NamePlural = TM024s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = FACADE
+Description = TBD
+#-------------------------------
+[TM_POISONTAIL]
+Name = TM025
+NamePlural = TM025s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = POISONTAIL
+Description = TBD
+#-------------------------------
+[TM_AERIALACE]
+Name = TM026
+NamePlural = TM026s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = AERIALACE
+Description = TBD
+#-------------------------------
+[TM_BULLDOZE]
+Name = TM027
+NamePlural = TM027s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = BULLDOZE
+Description = TBD
+#-------------------------------
+[TM_HEX]
+Name = TM028
+NamePlural = TM028s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = HEX
+Description = TBD
+#-------------------------------
+[TM_SNARL]
+Name = TM029
+NamePlural = TM029s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_55
+Move = SNARL
+Description = TBD
+#-------------------------------
+[TM_METALCLAW]
+Name = TM030
+NamePlural = TM030s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = METALCLAW
+Description = TBD
+#-------------------------------
+[TM_SWIFT]
+Name = TM031
+NamePlural = TM031s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = SWIFT
+Description = TBD
+#-------------------------------
+[TM_MAGICALLEAF]
+Name = TM032
+NamePlural = TM032s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = MAGICALLEAF
+Description = TBD
+#-------------------------------
+[TM_ICYWIND]
+Name = TM033
+NamePlural = TM033s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_55
+Move = ICYWIND
+Description = TBD
+#-------------------------------
+[TM_MUDSHOT]
+Name = TM034
+NamePlural = TM034s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_55
+Move = MUDSHOT
+Description = TBD
+#-------------------------------
+[TM_ROCKTOMB]
+Name = TM035
+NamePlural = TM035s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = ROCKTOMB
+Description = TBD
+#-------------------------------
+[TM_DRAININGKISS]
+Name = TM036
+NamePlural = TM036s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = DRAININGKISS
+Description = TBD
+#-------------------------------
+[TM_FLAMECHARGE]
+Name = TM037
+NamePlural = TM037s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = FLAMECHARGE
+Description = TBD
+#-------------------------------
+[TM_LOWSWEEP]
+Name = TM038
+NamePlural = TM038s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = LOWSWEEP
+Description = TBD
+#-------------------------------
+[TM_AIRCUTTER]
+Name = TM039
+NamePlural = TM039s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = AIRCUTTER
+Description = TBD
+#-------------------------------
+[TM_STOREDPOWER]
+Name = TM040
+NamePlural = TM040s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_20
+Move = STOREDPOWER
+Description = TBD
+#-------------------------------
+[TM_NIGHTSHADE]
+Name = TM041
+NamePlural = TM041s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = NIGHTSHADE
+Description = TBD
+#-------------------------------
+[TM_FLING]
+Name = TM042
+NamePlural = TM042s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = FLING
+Description = TBD
+#-------------------------------
+[TM_DRAGONTAIL]
+Name = TM043
+NamePlural = TM043s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = DRAGONTAIL
+Description = TBD
+#-------------------------------
+[TM_VENOSHOCK]
+Name = TM044
+NamePlural = TM044s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = VENOSHOCK
+Description = TBD
+#-------------------------------
+[TM_AVALANCHE]
+Name = TM045
+NamePlural = TM045s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = AVALANCHE
+Description = TBD
+#-------------------------------
+[TM_ENDURE]
+Name = TM046
+NamePlural = TM046s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = ENDURE
+Description = TBD
+#-------------------------------
+[TM_VOLTSWITCH]
+Name = TM047
+NamePlural = TM047s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = VOLTSWITCH
+Description = TBD
+#-------------------------------
+[TM_SUNNYDAY]
+Name = TM048
+NamePlural = TM048s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SUNNYDAY
+Description = TBD
+#-------------------------------
+[TM_RAINDANCE]
+Name = TM049
+NamePlural = TM049s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = RAINDANCE
+Description = TBD
+#-------------------------------
+[TM_SANDSTORM]
+Name = TM050
+NamePlural = TM050s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SANDSTORM
+Description = TBD
+#-------------------------------
+[TM_SNOWSCAPE]
+Name = TM051
+NamePlural = TM051s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SNOWSCAPE
+Description = TBD
+#-------------------------------
+[TM_SMARTSTRIKE]
+Name = TM052
+NamePlural = TM052s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = SMARTSTRIKE
+Description = TBD
+#-------------------------------
+[TM_PSYSHOCK]
+Name = TM053
+NamePlural = TM053s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = PSYSHOCK
+Description = TBD
+#-------------------------------
+[TM_DIG]
+Name = TM054
+NamePlural = TM054s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = DIG
+Description = TBD
+#-------------------------------
+[TM_BULLETSEED]
+Name = TM055
+NamePlural = TM055s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_25
+Move = BULLETSEED
+Description = TBD
+#-------------------------------
+[TM_FALSESWIPE]
+Name = TM056
+NamePlural = TM056s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_40
+Move = FALSESWIPE
+Description = TBD
+#-------------------------------
+[TM_BRICKBREAK]
+Name = TM057
+NamePlural = TM057s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = BRICKBREAK
+Description = TBD
+#-------------------------------
+[TM_ZENHEADBUTT]
+Name = TM058
+NamePlural = TM058s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = ZENHEADBUTT
+Description = TBD
+#-------------------------------
+[TM_UTURN]
+Name = TM059
+NamePlural = TM059s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = UTURN
+Description = TBD
+#-------------------------------
+[TM_SHADOWCLAW]
+Name = TM060
+NamePlural = TM060s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = SHADOWCLAW
+Description = TBD
+#-------------------------------
+[TM_FOULPLAY]
+Name = TM061
+NamePlural = TM061s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_95
+Move = FOULPLAY
+Description = TBD
+#-------------------------------
+[TM_PSYCHICFANGS]
+Name = TM062
+NamePlural = TM062s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_85
+Move = PSYCHICFANGS
+Description = TBD
+#-------------------------------
+[TM_BULKUP]
+Name = TM063
+NamePlural = TM063s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = BULKUP
+Description = TBD
+#-------------------------------
+[TM_AIRSLASH]
+Name = TM064
+NamePlural = TM064s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = AIRSLASH
+Description = TBD
+#-------------------------------
+[TM_BODYSLAM]
+Name = TM065
+NamePlural = TM065s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_85
+Move = BODYSLAM
+Description = TBD
+#-------------------------------
+[TM_FIREPUNCH]
+Name = TM066
+NamePlural = TM066s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = FIREPUNCH
+Description = TBD
+#-------------------------------
+[TM_THUNDERPUNCH]
+Name = TM067
+NamePlural = TM067s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = THUNDERPUNCH
+Description = TBD
+#-------------------------------
+[TM_ICEPUNCH]
+Name = TM068
+NamePlural = TM068s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = ICEPUNCH
+Description = TBD
+#-------------------------------
+[TM_SLEEPTALK]
+Name = TM069
+NamePlural = TM069s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SLEEPTALK
+Description = TBD
+#-------------------------------
+[TM_SEEDBOMB]
+Name = TM070
+NamePlural = TM070s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = SEEDBOMB
+Description = TBD
+#-------------------------------
+[TM_ELECTROBALL]
+Name = TM071
+NamePlural = TM071s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = ELECTROBALL
+Description = TBD
+#-------------------------------
+[TM_DRAINPUNCH]
+Name = TM072
+NamePlural = TM072s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = DRAINPUNCH
+Description = TBD
+#-------------------------------
+[TM_REFLECT]
+Name = TM073
+NamePlural = TM073s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = REFLECT
+Description = TBD
+#-------------------------------
+[TM_LIGHTSCREEN]
+Name = TM074
+NamePlural = TM074s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = LIGHTSCREEN
+Description = TBD
+#-------------------------------
+[TM_ROCKBLAST]
+Name = TM075
+NamePlural = TM075s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_25
+Move = ROCKBLAST
+Description = TBD
+#-------------------------------
+[TM_WATERFALL]
+Name = TM076
+NamePlural = TM076s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = WATERFALL
+Description = TBD
+#-------------------------------
+[TM_DRAGONCLAW]
+Name = TM077
+NamePlural = TM077s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = DRAGONCLAW
+Description = TBD
+#-------------------------------
+[TM_DAZZLINGGLEAM]
+Name = TM078
+NamePlural = TM078s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = DAZZLINGGLEAM
+Description = TBD
+#-------------------------------
+[TM_METRONOME]
+Name = TM079
+NamePlural = TM079s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = METRONOME
+Description = TBD
+#-------------------------------
+[TM_GRASSKNOT]
+Name = TM080
+NamePlural = TM080s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = GRASSKNOT
+Description = TBD
+#-------------------------------
+[TM_THUNDERWAVE]
+Name = TM081
+NamePlural = TM081s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = THUNDERWAVE
+Description = TBD
+#-------------------------------
+[TM_POISONJAB]
+Name = TM082
+NamePlural = TM082s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = POISONJAB
+Description = TBD
+#-------------------------------
+[TM_STOMPINGTANTRUM]
+Name = TM083
+NamePlural = TM083s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = STOMPINGTANTRUM
+Description = TBD
+#-------------------------------
+[TM_REST]
+Name = TM084
+NamePlural = TM084s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = REST
+Description = TBD
+#-------------------------------
+[TM_ROCKSLIDE]
+Name = TM085
+NamePlural = TM085s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = ROCKSLIDE
+Description = TBD
+#-------------------------------
+[TM_TAUNT]
+Name = TM086
+NamePlural = TM086s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = TAUNT
+Description = TBD
+#-------------------------------
+[TM_SWORDSDANCE]
+Name = TM087
+NamePlural = TM087s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SWORDSDANCE
+Description = TBD
+#-------------------------------
+[TM_BODYPRESS]
+Name = TM088
+NamePlural = TM088s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = BODYPRESS
+Description = TBD
+#-------------------------------
+[TM_SPIKES]
+Name = TM089
+NamePlural = TM089s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SPIKES
+Description = TBD
+#-------------------------------
+[TM_TOXICSPIKES]
+Name = TM090
+NamePlural = TM090s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = TOXICSPIKES
+Description = TBD
+#-------------------------------
+[TM_IMPRISON]
+Name = TM091
+NamePlural = TM091s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = IMPRISON
+Description = TBD
+#-------------------------------
+[TM_FLASHCANNON]
+Name = TM092
+NamePlural = TM092s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = FLASHCANNON
+Description = TBD
+#-------------------------------
+[TM_DARKPULSE]
+Name = TM093
+NamePlural = TM093s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = DARKPULSE
+Description = TBD
+#-------------------------------
+[TM_LEECHLIFE]
+Name = TM094
+NamePlural = TM094s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = LEECHLIFE
+Description = TBD
+#-------------------------------
+[TM_EERIEIMPULSE]
+Name = TM095
+NamePlural = TM095s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = EERIEIMPULSE
+Description = TBD
+#-------------------------------
+[TM_FLY]
+Name = TM096
+NamePlural = TM096s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = FLY
+Description = TBD
+#-------------------------------
+[TM_SKILLSWAP]
+Name = TM097
+NamePlural = TM097s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SKILLSWAP
+Description = TBD
+#-------------------------------
+[TM_IRONHEAD]
+Name = TM098
+NamePlural = TM098s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = IRONHEAD
+Description = TBD
+#-------------------------------
+[TM_DRAGONDANCE]
+Name = TM099
+NamePlural = TM099s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = DRAGONDANCE
+Description = TBD
+#-------------------------------
+[TM_POWERGEM]
+Name = TM100
+NamePlural = TM100s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = POWERGEM
+Description = TBD
+#-------------------------------
+[TM_GUNKSHOT]
+Name = TM101
+NamePlural = TM101s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = GUNKSHOT
+Description = TBD
+#-------------------------------
+[TM_SUBSTITUTE]
+Name = TM102
+NamePlural = TM102s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SUBSTITUTE
+Description = TBD
+#-------------------------------
+[TM_IRONDEFENSE]
+Name = TM103
+NamePlural = TM103s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = IRONDEFENSE
+Description = TBD
+#-------------------------------
+[TM_XSCISSOR]
+Name = TM104
+NamePlural = TM104s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = XSCISSOR
+Description = TBD
+#-------------------------------
+[TM_DRILLRUN]
+Name = TM105
+NamePlural = TM105s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = DRILLRUN
+Description = TBD
+#-------------------------------
+[TM_WILLOWISP]
+Name = TM106
+NamePlural = TM106s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = WILLOWISP
+Description = TBD
+#-------------------------------
+[TM_CRUNCH]
+Name = TM107
+NamePlural = TM107s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = CRUNCH
+Description = TBD
+#-------------------------------
+[TM_TRICK]
+Name = TM108
+NamePlural = TM108s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = TRICK
+Description = TBD
+#-------------------------------
+[TM_LIQUIDATION]
+Name = TM109
+NamePlural = TM109s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_85
+Move = LIQUIDATION
+Description = TBD
+#-------------------------------
+[TM_GIGADRAIN]
+Name = TM110
+NamePlural = TM110s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = GIGADRAIN
+Description = TBD
+#-------------------------------
+[TM_AURASPHERE]
+Name = TM111
+NamePlural = TM111s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = AURASPHERE
+Description = TBD
+#-------------------------------
+[TM_TAILWIND]
+Name = TM112
+NamePlural = TM112s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = TAILWIND
+Description = TBD
+#-------------------------------
+[TM_SHADOWBALL]
+Name = TM113
+NamePlural = TM113s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = SHADOWBALL
+Description = TBD
+#-------------------------------
+[TM_DRAGONPULSE]
+Name = TM114
+NamePlural = TM114s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_85
+Move = DRAGONPULSE
+Description = TBD
+#-------------------------------
+[TM_STEALTHROCK]
+Name = TM115
+NamePlural = TM115s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = STEALTHROCK
+Description = TBD
+#-------------------------------
+[TM_HYPERVOICE]
+Name = TM116
+NamePlural = TM116s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = HYPERVOICE
+Description = TBD
+#-------------------------------
+[TM_HEATWAVE]
+Name = TM117
+NamePlural = TM117s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_95
+Move = HEATWAVE
+Description = TBD
+#-------------------------------
+[TM_ENERGYBALL]
+Name = TM118
+NamePlural = TM118s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = ENERGYBALL
+Description = TBD
+#-------------------------------
+[TM_PSYCHIC]
+Name = TM119
+NamePlural = TM119s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = PSYCHIC
+Description = TBD
+#-------------------------------
+[TM_HEAVYSLAM]
+Name = TM120
+NamePlural = TM120s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = HEAVYSLAM
+Description = TBD
+#-------------------------------
+[TM_ENCORE]
+Name = TM121
+NamePlural = TM121s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = ENCORE
+Description = TBD
+#-------------------------------
+[TM_SURF]
+Name = TM122
+NamePlural = TM122s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = SURF
+Description = TBD
+#-------------------------------
+[TM_ICESPINNER]
+Name = TM123
+NamePlural = TM123s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = ICESPINNER
+Description = TBD
+#-------------------------------
+[TM_FLAMETHROWER]
+Name = TM124
+NamePlural = TM124s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = FLAMETHROWER
+Description = TBD
+#-------------------------------
+[TM_THUNDERBOLT]
+Name = TM125
+NamePlural = TM125s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = THUNDERBOLT
+Description = TBD
+#-------------------------------
+[TM_PLAYROUGH]
+Name = TM126
+NamePlural = TM126s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = PLAYROUGH
+Description = TBD
+#-------------------------------
+[TM_AMNESIA]
+Name = TM127
+NamePlural = TM127s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = AMNESIA
+Description = TBD
+#-------------------------------
+[TM_CALMMIND]
+Name = TM128
+NamePlural = TM128s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = CALMMIND
+Description = TBD
+#-------------------------------
+[TM_HELPINGHAND]
+Name = TM129
+NamePlural = TM129s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = HELPINGHAND
+Description = TBD
+#-------------------------------
+[TM_POLLENPUFF]
+Name = TM130
+NamePlural = TM130s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = POLLENPUFF
+Description = TBD
+#-------------------------------
+[TM_BATONPASS]
+Name = TM131
+NamePlural = TM131s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = BATONPASS
+Description = TBD
+#-------------------------------
+[TM_EARTHPOWER]
+Name = TM132
+NamePlural = TM132s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = EARTHPOWER
+Description = TBD
+#-------------------------------
+[TM_REVERSAL]
+Name = TM133
+NamePlural = TM133s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = REVERSAL
+Description = TBD
+#-------------------------------
+[TM_ICEBEAM]
+Name = TM134
+NamePlural = TM134s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = ICEBEAM
+Description = TBD
+#-------------------------------
+[TM_ELECTRICTERRAIN]
+Name = TM135
+NamePlural = TM135s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = ELECTRICTERRAIN
+Description = TBD
+#-------------------------------
+[TM_GRASSYTERRAIN]
+Name = TM136
+NamePlural = TM136s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = GRASSYTERRAIN
+Description = TBD
+#-------------------------------
+[TM_PSYCHICTERRAIN]
+Name = TM137
+NamePlural = TM137s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = PSYCHICTERRAIN
+Description = TBD
+#-------------------------------
+[TM_MISTYTERRAIN]
+Name = TM138
+NamePlural = TM138s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = MISTYTERRAIN
+Description = TBD
+#-------------------------------
+[TM_NASTYPLOT]
+Name = TM139
+NamePlural = TM139s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = NASTYPLOT
+Description = TBD
+#-------------------------------
+[TM_FIREBLAST]
+Name = TM140
+NamePlural = TM140s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_110
+Move = FIREBLAST
+Description = TBD
+#-------------------------------
+[TM_HYDROPUMP]
+Name = TM141
+NamePlural = TM141s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_110
+Move = HYDROPUMP
+Description = TBD
+#-------------------------------
+[TM_BLIZZARD]
+Name = TM142
+NamePlural = TM142s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_110
+Move = BLIZZARD
+Description = TBD
+#-------------------------------
+[TM_FIREPLEDGE]
+Name = TM143
+NamePlural = TM143s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = FIREPLEDGE
+Description = TBD
+#-------------------------------
+[TM_WATERPLEDGE]
+Name = TM144
+NamePlural = TM144s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = WATERPLEDGE
+Description = TBD
+#-------------------------------
+[TM_GRASSPLEDGE]
+Name = TM145
+NamePlural = TM145s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = GRASSPLEDGE
+Description = TBD
+#-------------------------------
+[TM_WILDCHARGE]
+Name = TM146
+NamePlural = TM146s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = WILDCHARGE
+Description = TBD
+#-------------------------------
+[TM_SLUDGEBOMB]
+Name = TM147
+NamePlural = TM147s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = SLUDGEBOMB
+Description = TBD
+#-------------------------------
+[TM_EARTHQUAKE]
+Name = TM148
+NamePlural = TM148s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_100
+Move = EARTHQUAKE
+Description = TBD
+#-------------------------------
+[TM_STONEEDGE]
+Name = TM149
+NamePlural = TM149s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_100
+Move = STONEEDGE
+Description = TBD
+#-------------------------------
+[TM_PHANTOMFORCE]
+Name = TM150
+NamePlural = TM150s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = PHANTOMFORCE
+Description = TBD
+#-------------------------------
+[TM_GIGAIMPACT]
+Name = TM151
+NamePlural = TM151s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_150
+Move = GIGAIMPACT
+Description = TBD
+#-------------------------------
+[TM_BLASTBURN]
+Name = TM152
+NamePlural = TM152s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_150
+Move = BLASTBURN
+Description = TBD
+#-------------------------------
+[TM_HYDROCANNON]
+Name = TM153
+NamePlural = TM153s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_150
+Move = HYDROCANNON
+Description = TBD
+#-------------------------------
+[TM_FRENZYPLANT]
+Name = TM154
+NamePlural = TM154s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_150
+Move = FRENZYPLANT
+Description = TBD
+#-------------------------------
+[TM_OUTRAGE]
+Name = TM155
+NamePlural = TM155s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = OUTRAGE
+Description = TBD
+#-------------------------------
+[TM_OVERHEAT]
+Name = TM156
+NamePlural = TM156s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_130
+Move = OVERHEAT
+Description = TBD
+#-------------------------------
+[TM_FOCUSBLAST]
+Name = TM157
+NamePlural = TM157s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = FOCUSBLAST
+Description = TBD
+#-------------------------------
+[TM_LEAFSTORM]
+Name = TM158
+NamePlural = TM158s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_130
+Move = LEAFSTORM
+Description = TBD
+#-------------------------------
+[TM_HURRICANE]
+Name = TM159
+NamePlural = TM159s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_110
+Move = HURRICANE
+Description = TBD
+#-------------------------------
+[TM_TRICKROOM]
+Name = TM160
+NamePlural = TM160s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = TRICKROOM
+Description = TBD
+#-------------------------------
+[TM_BUGBUZZ]
+Name = TM161
+NamePlural = TM161s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = BUGBUZZ
+Description = TBD
+#-------------------------------
+[TM_HYPERBEAM]
+Name = TM162
+NamePlural = TM162s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_150
+Move = HYPERBEAM
+Description = TBD
+#-------------------------------
+[TM_BRAVEBIRD]
+Name = TM163
+NamePlural = TM163s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = BRAVEBIRD
+Description = TBD
+#-------------------------------
+[TM_FLAREBLITZ]
+Name = TM164
+NamePlural = TM164s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = FLAREBLITZ
+Description = TBD
+#-------------------------------
+[TM_THUNDER]
+Name = TM165
+NamePlural = TM165s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_110
+Move = THUNDER
+Description = TBD
+#-------------------------------
+[TM_CLOSECOMBAT]
+Name = TM166
+NamePlural = TM166s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = CLOSECOMBAT
+Description = TBD
+#-------------------------------
+[TM_SOLARBEAM]
+Name = TM167
+NamePlural = TM167s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = SOLARBEAM
+Description = TBD
+#-------------------------------
+[TM_DRACOMETEOR]
+Name = TM168
+NamePlural = TM168s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_130
+Move = DRACOMETEOR
+Description = TBD
+#-------------------------------
+[TM_STEELBEAM]
+Name = TM169
+NamePlural = TM169s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_140
+Move = STEELBEAM
+Description = TBD
+#-------------------------------
+[TM_ROAR]
+Name = TM170
+NamePlural = TM170s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = ROAR
+Description = TBD
+#-------------------------------
+[TM_CHARGE]
+Name = TM171
+NamePlural = TM171s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = CHARGE
+Description = TBD
+#-------------------------------
+[TM_HAZE]
+Name = TM172
+NamePlural = TM172s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = HAZE
+Description = TBD
+#-------------------------------
+[TM_TOXIC]
+Name = TM173
+NamePlural = TM173s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = TOXIC
+Description = TBD
+#-------------------------------
+[TM_SANDTOMB]
+Name = TM174
+NamePlural = TM174s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_35
+Move = SANDTOMB
+Description = TBD
+#-------------------------------
+[TM_SPITE]
+Name = TM175
+NamePlural = TM175s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SPITE
+Description = TBD
+#-------------------------------
+[TM_GRAVITY]
+Name = TM176
+NamePlural = TM176s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = GRAVITY
+Description = TBD
+#-------------------------------
+[TM_SMACKDOWN]
+Name = TM177
+NamePlural = TM177s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = SMACKDOWN
+Description = TBD
+#-------------------------------
+[TM_GYROBALL]
+Name = TM178
+NamePlural = TM178s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = GYROBALL
+Description = TBD
+#-------------------------------
+[TM_KNOCKOFF]
+Name = TM179
+NamePlural = TM179s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = KNOCKOFF
+Description = TBD
+#-------------------------------
+[TM_BUGBITE]
+Name = TM180
+NamePlural = TM180s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = BUGBITE
+Description = TBD
+#-------------------------------
+[TM_SUPERFANG]
+Name = TM181
+NamePlural = TM181s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = SUPERFANG
+Description = TBD
+#-------------------------------
+[TM_VACUUMWAVE]
+Name = TM182
+NamePlural = TM182s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_40
+Move = VACUUMWAVE
+Description = TBD
+#-------------------------------
+[TM_LUNGE]
+Name = TM183
+NamePlural = TM183s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = LUNGE
+Description = TBD
+#-------------------------------
+[TM_HIGHHORSEPOWER]
+Name = TM184
+NamePlural = TM184s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_95
+Move = HIGHHORSEPOWER
+Description = TBD
+#-------------------------------
+[TM_ICICLESPEAR]
+Name = TM185
+NamePlural = TM185s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_25
+Move = ICICLESPEAR
+Description = TBD
+#-------------------------------
+[TM_SCALD]
+Name = TM186
+NamePlural = TM186s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = SCALD
+Description = TBD
+#-------------------------------
+[TM_HEATCRASH]
+Name = TM187
+NamePlural = TM187s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = HEATCRASH
+Description = TBD
+#-------------------------------
+[TM_SOLARBLADE]
+Name = TM188
+NamePlural = TM188s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_125
+Move = SOLARBLADE
+Description = TBD
+#-------------------------------
+[TM_UPROAR]
+Name = TM189
+NamePlural = TM189s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = UPROAR
+Description = TBD
+#-------------------------------
+[TM_FOCUSPUNCH]
+Name = TM190
+NamePlural = TM190s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_150
+Move = FOCUSPUNCH
+Description = TBD
+#-------------------------------
+[TM_WEATHERBALL]
+Name = TM191
+NamePlural = TM191s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_50
+Move = WEATHERBALL
+Description = TBD
+#-------------------------------
+[TM_GRASSYGLIDE]
+Name = TM192
+NamePlural = TM192s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_55
+Move = GRASSYGLIDE
+Description = TBD
+#-------------------------------
+[TM_BURNINGJEALOUSY]
+Name = TM193
+NamePlural = TM193s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = BURNINGJEALOUSY
+Description = TBD
+#-------------------------------
+[TM_FLIPTURN]
+Name = TM194
+NamePlural = TM194s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = FLIPTURN
+Description = TBD
+#-------------------------------
+[TM_DUALWINGBEAT]
+Name = TM195
+NamePlural = TM195s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_40
+Move = DUALWINGBEAT
+Description = TBD
+#-------------------------------
+[TM_POLTERGEIST]
+Name = TM196
+NamePlural = TM196s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_110
+Move = POLTERGEIST
+Description = TBD
+#-------------------------------
+[TM_LASHOUT]
+Name = TM197
+NamePlural = TM197s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = LASHOUT
+Description = TBD
+#-------------------------------
+[TM_SCALESHOT]
+Name = TM198
+NamePlural = TM198s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_25
+Move = SCALESHOT
+Description = TBD
+#-------------------------------
+[TM_MISTYEXPLOSION]
+Name = TM199
+NamePlural = TM199s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_100
+Move = MISTYEXPLOSION
+Description = TBD
+#-------------------------------
+[TM_PAINSPLIT]
+Name = TM200
+NamePlural = TM200s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = PAINSPLIT
+Description = TBD
+#-------------------------------
+[TM_PSYCHUP]
+Name = TM201
+NamePlural = TM201s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = PSYCHUP
+Description = TBD
+#-------------------------------
+[TM_DOUBLEEDGE]
+Name = TM202
+NamePlural = TM202s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = DOUBLEEDGE
+Description = TBD
+#-------------------------------
+[TM_ENDEAVOR]
+Name = TM203
+NamePlural = TM203s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = ENDEAVOR
+Description = TBD
+#-------------------------------
+[TM_PETALBLIZZARD]
+Name = TM204
+NamePlural = TM204s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = PETALBLIZZARD
+Description = TBD
+#-------------------------------
+[TM_TEMPERFLARE]
+Name = TM205
+NamePlural = TM205s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = TEMPERFLARE
+Description = TBD
+#-------------------------------
+[TM_WHIRLPOOL]
+Name = TM206
+NamePlural = TM206s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_35
+Move = WHIRLPOOL
+Description = TBD
+#-------------------------------
+[TM_MUDDYWATER]
+Name = TM207
+NamePlural = TM207s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_90
+Move = MUDDYWATER
+Description = TBD
+#-------------------------------
+[TM_SUPERCELLSLAM]
+Name = TM208
+NamePlural = TM208s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_100
+Move = SUPERCELLSLAM
+Description = TBD
+#-------------------------------
+[TM_ELECTROWEB]
+Name = TM209
+NamePlural = TM209s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_55
+Move = ELECTROWEB
+Description = TBD
+#-------------------------------
+[TM_TRIPLEAXEL]
+Name = TM210
+NamePlural = TM210s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_20
+Move = TRIPLEAXEL
+Description = TBD
+#-------------------------------
+[TM_COACHING]
+Name = TM211
+NamePlural = TM211s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = COACHING
+Description = TBD
+#-------------------------------
+[TM_SLUDGEWAVE]
+Name = TM212
+NamePlural = TM212s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_95
+Move = SLUDGEWAVE
+Description = TBD
+#-------------------------------
+[TM_SCORCHINGSANDS]
+Name = TM213
+NamePlural = TM213s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = SCORCHINGSANDS
+Description = TBD
+#-------------------------------
+[TM_FEATHERDANCE]
+Name = TM214
+NamePlural = TM214s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = FEATHERDANCE
+Description = TBD
+#-------------------------------
+[TM_FUTURESIGHT]
+Name = TM215
+NamePlural = TM215s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = FUTURESIGHT
+Description = TBD
+#-------------------------------
+[TM_EXPANDINGFORCE]
+Name = TM216
+NamePlural = TM216s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = EXPANDINGFORCE
+Description = TBD
+#-------------------------------
+[TM_SKITTERSMACK]
+Name = TM217
+NamePlural = TM217s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_70
+Move = SKITTERSMACK
+Description = TBD
+#-------------------------------
+[TM_METEORBEAM]
+Name = TM218
+NamePlural = TM218s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_120
+Move = METEORBEAM
+Description = TBD
+#-------------------------------
+[TM_THROATCHOP]
+Name = TM219
+NamePlural = TM219s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = THROATCHOP
+Description = TBD
+#-------------------------------
+[TM_BREAKINGSWIPE]
+Name = TM220
+NamePlural = TM220s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_60
+Move = BREAKINGSWIPE
+Description = TBD
+#-------------------------------
+[TM_METALSOUND]
+Name = TM221
+NamePlural = TM221s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = METALSOUND
+Description = TBD
+#-------------------------------
+[TM_CURSE]
+Name = TM222
+NamePlural = TM222s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = CURSE
+Description = A move that has different effects depending on whether the user is a Ghost type or not.
+#-------------------------------
+[TM_HARDPRESS]
+Name = TM223
+NamePlural = TM223s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = HARDPRESS
+Description = The target is crushed with great force. The attack is more powerful the more HP the target has left.
+#-------------------------------
+[TM_DRAGONCHEER]
+Name = TM224
+NamePlural = TM224s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_10
+Move = DRAGONCHEER
+Description = The user raises its allies' critical hit ratio with a draconic cry. This rouses Dragon types more.
+#-------------------------------
+[TM_ALLURINGVOICE]
+Name = TM225
+NamePlural = TM225s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_80
+Move = ALLURINGVOICE
+Description = Attacks using an angelic voice. This confuses the target if its stats have been raised this turn.
+#-------------------------------
+[TM_PSYCHICNOISE]
+Name = TM226
+NamePlural = TM226s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_75
+Move = PSYCHICNOISE
+Description = Attacks the target with unpleasant sound waves. Prevents the target from healing for two turns.
+#-------------------------------
+[TM_UPPERHAND]
+Name = TM227
+NamePlural = TM227s
+Pocket = 4
+Price = 3000
+BPPrice = 80
+FieldUse = TR
+Flags = Fling_65
+Move = UPPERHAND
+Description = An attack that hits first and makes the target flinch. Fails if the target isn't using a high priority move.

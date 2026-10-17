@@ -43,9 +43,7 @@ class ExampleCross < AbstractMap
       end
     end
 
-    exampleES = ExampleEncounterSet.new()
-    exampleES.addToMapEncounter(@mapEncounters, :Land, 15, 25)
-    randomES = TypalEncounterSet.new(:NORMAL)
+    randomES = TypalEncounterSet.new(@typeArray)
     randomES.addToMapEncounter(@mapEncounters, :Land, 15, 25)
     @mapEncounters.randomizeAll()
   end

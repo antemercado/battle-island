@@ -3,6 +3,7 @@ class AbstractEncounterSet
 
   def initialize
     @speciesHash = {}
+    @EncounterRNG = @EncounterRNG
   end
 
   def addToMapEncounter(mapEncounter, key, levelMin=1, levelMax=100)
@@ -53,23 +54,23 @@ class TypalEncounterSet < AbstractEncounterSet
       speciesArr = []
       case key
       when :Land
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
       when :Cave
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
       when :Water
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
-        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type)])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
+        speciesArr.push([10, $DungeonManager.getRandomSpeciesIDByType(type.sample(random: @EncounterRng))])
       end
       @speciesHash[key] = speciesArr
     end
